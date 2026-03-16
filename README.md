@@ -73,7 +73,7 @@ movie-recommendation-system
 ├── tmdb_5000_credits.csv # Movie credits dataset
 
 ├── README.md # Project documentation
-│
+
 ├── .idea # IDE configuration files
 
 ├── venv # Virtual environment
