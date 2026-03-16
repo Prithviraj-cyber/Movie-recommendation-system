@@ -66,6 +66,8 @@ movie-recommendation-system
 
 ├── movies.pkl # Processed movie dataset
 
+├── similarity.pkl # Cosine similarity matrix
+
 ├── tmdb_5000_movies.csv # Original movie dataset
 
 ├── tmdb_5000_credits.csv # Movie credits dataset
