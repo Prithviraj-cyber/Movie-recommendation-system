@@ -1,9 +1,10 @@
 # 🎬 Movie Recommendation System
 
-A Machine Learning based web application that recommends movies similar to a selected movie using content-based filtering techniques.  
-The system analyzes movie features and calculates similarity between movies to suggest relevant recommendations.
+A Machine Learning based web application that recommends movies similar to a selected movie using **content-based filtering** and **cosine similarity**.
 
-The application is built with **Python and Streamlit** and deployed on **Hugging Face Spaces** for live interaction.
+The system analyzes movie metadata such as genres, keywords, cast, and overview to suggest relevant movies.
+
+The application is built using **Python and Streamlit** and deployed on **Hugging Face Spaces** for live interaction.
 
 ---
 
@@ -19,26 +20,27 @@ https://www.kaggle.com/code/anandsinghchauhan077/movie-recommendation-system
 
 ## 🧠 Project Overview
 
-The **Movie Recommendation System** suggests movies based on similarity with the selected movie.  
-It uses **content-based filtering** and **cosine similarity** to recommend movies with similar genres, keywords, and features.
+The **Movie Recommendation System** suggests movies similar to the one selected by the user.
 
-Users can select a movie from the list and the system will display recommended movies instantly.
+It works by analyzing movie features and calculating similarity between movies using **cosine similarity**.
 
-This project demonstrates a complete **Machine Learning pipeline**, including:
+The system processes movie metadata and returns a list of recommended movies with similar characteristics.
+
+This project demonstrates an **end-to-end machine learning workflow**, including:
 
 - Data preprocessing
-- Feature extraction
-- Similarity calculation
+- Feature engineering
 - Model building
-- Web app deployment
+- Similarity computation
+- Streamlit web app deployment
 
 ---
 
 ## ✨ Features
 
-- Recommend similar movies instantly
+- Recommend movies based on similarity
 - Content-based recommendation algorithm
-- Interactive **Streamlit web interface**
+- Interactive **Streamlit web application**
 - Fast movie similarity search
 - Deployed on **Hugging Face Spaces**
 
@@ -46,13 +48,12 @@ This project demonstrates a complete **Machine Learning pipeline**, including:
 
 ## 🛠 Tech Stack
 
-- **Python**
-- **Pandas**
-- **NumPy**
-- **Scikit-learn**
-- **Streamlit**
-- **TMDB API**
-- **Jupyter Notebook**
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Streamlit
+- Jupyter Notebook
 
 ---
 
@@ -61,25 +62,32 @@ movie-recommendation-system
 │
 ├── app.py # Streamlit web application
 
-├── movie-recommendation.ipynb # Model training notebook
+├── movie-recommender.ipynb # Model training notebook
 
-├── movies.pkl # Movie dataset
+├── movies.pkl # Processed movie dataset
 
-├── similarity.pkl # Cosine similarity matrix
+├── tmdb_5000_movies.csv # Original movie dataset
+
+├── tmdb_5000_credits.csv # Movie credits dataset
 
 ├── README.md # Project documentation
+│
+├── .idea # IDE configuration files
 
+├── venv # Virtual environment
+
+└── .ipynb_checkpoints # Notebook checkpoints
 
 
 ---
 
 ## 🔍 How It Works
 
-1. The movie dataset is loaded and cleaned.
-2. Important features like genres, keywords, cast, and overview are combined.
+1. The TMDB movie dataset is loaded and cleaned.
+2. Important features such as genres, keywords, cast, and overview are combined.
 3. Text features are converted into numerical vectors.
-4. Cosine similarity is used to calculate similarity between movies.
-5. When a user selects a movie, the system returns the top recommended similar movies.
+4. Cosine similarity is used to compute similarity between movies.
+5. When a user selects a movie, the system returns the most similar movies.
 
 ---
 
@@ -87,15 +95,13 @@ movie-recommendation-system
 
 Clone the repository:
 
-```bash id="mrs02"
+```bash id="mrv12"
 git clone https://github.com/yourusername/movie-recommendation-system.git
 cd movie-recommendation-system
 
 Install dependencies:
-
 pip install -r requirements.txt
 
 Run the Streamlit app:
-
 streamlit run app.py
 
